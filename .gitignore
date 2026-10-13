@@ -4,10 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-<<<<<<< HEAD
 /terraform/src/.terraform/
-=======
->>>>>>> d2ee6265 (Adding github workflows and other files)
 
 # testing
 /coverage
