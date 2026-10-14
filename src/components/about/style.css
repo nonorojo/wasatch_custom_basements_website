@@ -19,10 +19,10 @@
 .about-panel {
 	padding: 28px;
 	border-radius: 0;
-	background: rgba(255, 255, 255, 0.2);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+	background: rgba(255, 255, 255, 0.116);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.185);
 }
 
 .counter-box {

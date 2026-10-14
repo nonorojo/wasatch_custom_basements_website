@@ -28,7 +28,6 @@ const About = () => {
                 <p>
                   We specialize in transforming basements and living spaces to match your vision—beautiful, functional, and built to last. Our mission is simple: deliver high‑quality craftsmanship at an affordable price, so every family can enjoy a home they’re proud of.
                 </p>
-              </div>
               <div className="about-signature">
                 <div className="signature-left">
                   <img src={signature} alt="signature" />
@@ -37,6 +36,7 @@ const About = () => {
                   <h3>Nathan & Eliu Flores</h3>
                   <p>Business Owners</p>
                 </div>
+              </div>
               </div>
             </div>
           </div>
