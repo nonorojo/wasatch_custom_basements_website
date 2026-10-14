@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "container_app" {
-  name = "rg-cae-nonoroj-${var.environment}"
+  name = "rg-nonoroj-${var.environment}"
 }
 
 data "azurerm_container_app_environment" "container_app" {
