@@ -2,9 +2,9 @@ import React from "react";
 import CountUp from "react-countup";
 
 import bg from "../../img/about-bg.png";
-import img1 from "../../img/about-1.png";
-import img2 from "../../img/about-2.png";
-import signature from "../../img/signature.png";
+import img1 from "../../img/about-1.jpg";
+import img2 from "../../img/about-2.jpg";
+import signature from "../../img/signature.jpg";
 
 import "./style.css";
 
@@ -18,26 +18,22 @@ const About = () => {
               <div className="site-heading">
                 <h3 className="sub-title">ABOUT US</h3>
                 <h2 className="section-title">
-                  Strategy-led design in every detail
+                  Affordable and high-quality craftsmanship
                 </h2>
               </div>
               <p>
-                Architecture viverra tristique justo duis vitae diam neque
-                nivamus aestan ateuene artines aringianu atelit finibus viverra
-                nec lacus. Nedana theme erodino setlie suscipe no curabit
-                tristique aringianu atelit finibus .
+              Two Hispanic brothers started Wasatch Custom Basements with one goal in mind: to build a better life for their families while helping others love their homes again. What began as a small dream has grown into a trusted remodeling team serving Salt Lake City with pride, integrity, and hard work.
               </p>
               <p>
-                Design inilla duiman at elit finibus viverra nec a lacus themo
-                the drudea seneoice misuscipit non sagie the fermen.
+              We specialize in transforming basements and living spaces to match your vision—beautiful, functional, and built to last. Our mission is simple: deliver high‑quality craftsmanship at an affordable price, so every family can enjoy a home they’re proud of.
               </p>
               <div className="about-signature">
                 <div className="signature-left">
                   <img src={signature} alt="signature" />
                 </div>
                 <div className="signature-right">
-                  <h3>Robertho Garcia</h3>
-                  <p>President</p>
+                  <h3>Nathan & Eliu Flores</h3>
+                  <p>Business Owners</p>
                 </div>
               </div>
             </div>
@@ -47,7 +43,7 @@ const About = () => {
               <div className="counter-box">
                 <h2>
                   <span className="counter">
-                    <CountUp start={0} end={105} duration={5} />
+                    <CountUp start={0} end={5} duration={5} />
                   </span>
                 </h2>
                 <p>
@@ -58,7 +54,7 @@ const About = () => {
               <div className="counter-box">
                 <h2>
                   <span className="counter">
-                    <CountUp start={0} end={436} duration={8} />
+                    <CountUp start={0} end={15} duration={8} />
                   </span>
                   +
                 </h2>
@@ -67,7 +63,7 @@ const About = () => {
                   Completed
                 </p>
               </div>
-              <div className="counter-box">
+              {/* <div className="counter-box">
                 <h2>
                   <span className="counter">
                     <CountUp start={0} end={180} duration={5} />
@@ -78,7 +74,7 @@ const About = () => {
                   Awards <br />
                   Winning
                 </p>
-              </div>
+              </div> */}
             </div>
             <div className="about-right" data-aos="fade-left">
               <img className="about_img_1" src={img2} alt="img" />

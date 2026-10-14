@@ -1,0 +1,119 @@
+:root {
+	--theme-charcoal: #202124;
+	--theme-charcoal-light: #2b2c2f;
+	--theme-gold: #c49a52;
+	--theme-ivory: #f3f0e8;
+	--theme-muted: #b8b5ad;
+}
+
+body,
+.App {
+	background-color: var(--theme-charcoal);
+	color: var(--theme-muted);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--theme-ivory);
+}
+
+p {
+	color: var(--theme-muted);
+}
+
+section {
+	background-color: var(--theme-charcoal);
+}
+
+.header:after,
+.site-logo a,
+.hero-social {
+	background-color: var(--theme-charcoal);
+}
+
+.header:before {
+	border-color: var(--theme-charcoal-light) transparent;
+}
+
+.mainmenu ul li a,
+.hero-social ul li a,
+.hero-social p,
+.search-toggle {
+	color: var(--theme-ivory);
+}
+
+.mainmenu ul li a {
+	background-image: linear-gradient(
+		to right,
+		var(--theme-ivory),
+		var(--theme-ivory) 50%,
+		var(--theme-ivory) 50%
+	);
+}
+
+.mainmenu ul li ul {
+	background-color: var(--theme-charcoal-light);
+}
+
+.mainmenu ul li ul li {
+	border-color: #414246;
+}
+
+.header-btn {
+	background-color: var(--theme-gold);
+	color: var(--theme-charcoal);
+}
+
+.header-btn > div {
+	background-color: var(--theme-gold);
+	color: var(--theme-charcoal);
+}
+
+.header-btn > div i {
+	background-color: var(--theme-charcoal);
+	color: var(--theme-ivory);
+}
+
+.header-btn > div:after {
+	border-color: var(--theme-gold);
+}
+
+.btn-fill,
+.form-button {
+	background-color: var(--theme-gold);
+	border-color: var(--theme-gold);
+	color: var(--theme-charcoal);
+}
+
+.btn-fill:hover,
+.form-button:hover {
+	background-color: transparent;
+	color: var(--theme-gold);
+}
+
+.btn-border {
+	border-color: var(--theme-ivory);
+	color: var(--theme-ivory);
+}
+
+input,
+textarea,
+select {
+	background-color: var(--theme-charcoal-light);
+	color: var(--theme-ivory);
+}
+
+.contact-info-icon,
+.contact-info-icon span,
+.contact-info-text h5 {
+	color: var(--theme-ivory);
+	border-color: var(--theme-gold);
+}
+
+.single-about-listing {
+	border-color: #414246;
+}

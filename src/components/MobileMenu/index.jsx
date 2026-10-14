@@ -11,11 +11,13 @@ const menus = [
     link: "/home",
   },
 
+  /*
   {
     id: 2,
     title: "About",
     link: "/about",
   },
+  */
 
   {
     id: 3,
@@ -34,6 +36,7 @@ const menus = [
       },
     ],
   },
+  /*
   {
     id: 4,
     title: "Service",
@@ -51,6 +54,8 @@ const menus = [
       },
     ],
   },
+  */
+  /*
   {
     id: 7,
     title: "Pages",
@@ -84,7 +89,8 @@ const menus = [
       },
     ],
   },
-
+  */
+  /*
   {
     id: 5,
     title: "Blog",
@@ -102,6 +108,7 @@ const menus = [
       },
     ],
   },
+  */
   {
     id: 88,
     title: "Contact",

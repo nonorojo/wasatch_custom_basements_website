@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import hero1 from "../../img/slider-1.jpg";
-import hero2 from "../../img/slider-2.png";
+import hero2 from "../../img/slider-2.jpg";
 
 import "./style.css";
 
@@ -81,8 +81,8 @@ class Hero extends Component {
                 <div className="container">
                   <div className="hero-text">
                     <h2>
-                      Unique Architecture <br />
-                      Design Ideas
+                      Wasatch Custom <br />
+                      Basements
                     </h2>
                     <div className="hero-action">
                       <Link to="/projects" className="cta-btn btn-fill">
@@ -114,8 +114,8 @@ class Hero extends Component {
                 <div className="container">
                   <div className="hero-text">
                     <h2>
-                      Unique Architecture <br />
-                      Design Ideas
+                      Wasatch Custom <br />
+                      Basements
                     </h2>
                     <div className="hero-action">
                       <Link to="/projects" className="cta-btn btn-fill">

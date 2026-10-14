@@ -3,6 +3,7 @@ import AllRoute from '../router';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import './App.css';
+import '../../theme.css';
 
 
 const App = () => { 

@@ -1,26 +1,20 @@
 name: Build and Deploy QA
 
 on:
-  workflow_run:
-    workflows: ["Build and Deploy Dev"]
-    types: [completed]
+  workflow_dispatch:
+    inputs:
+      dev_run_id:
+        description: "Run ID of the successful Dev pipeline to promote"
+        required: true
+        type: string
 
 permissions:
-  id-token: write
+  actions: read
   contents: read
 
 env:
-  VERSION: "1.0.${{ github.run_number }}"
-  ARM_USE_OIDC: "true"
-  ARM_CLIENT_ID: ${{ secrets.GH_ACTIONS_AZURE_CLIENT_ID }}
-  ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-  ARM_SUBSCRIPTION_ID: ${{ secrets.QA_AZURE_SUBSCRIPTION_ID }}
   CONTAINER_REGISTRY: "crnono.azurecr.io"
   CONTAINER_IMAGE: "crnono.azurecr.io/wasatch-custom-basements/frontend-site"
-  CONTAINER_REGISTRY_USERNAME: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
-  CONTAINER_REGISTRY_PASSWORD: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
-  TF_VAR_container_registry_username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
-  TF_VAR_container_registry_password: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
   TFSTATE_RESOURCE_GROUP: rg-tfstate-qa
   TFSTATE_STORAGE_ACCOUNT: stdevnonorojotfstate
   TFSTATE_CONTAINER: tfstate
@@ -30,20 +24,84 @@ env:
   TF_VAR_workload_profile_type: "Consumption"
   TF_VAR_container_app_cpu: ${{ vars.QA_CONTAINER_APP_CPU || '0.25' }}
   TF_VAR_container_app_memory: ${{ vars.QA_CONTAINER_APP_MEMORY || '0.5Gi' }}
-  TF_VAR_container_image: "crnono.azurecr.io/wasatch-custom-basements/frontend-site:1.0.${{ github.run_number }}"
 
 defaults:
   run:
     working-directory: terraform/src
 
 jobs:
-  terraform:
-    if: github.event.workflow_run.conclusion == 'success'
+  validate-dev-run:
     runs-on: ubuntu-latest
+    outputs:
+      dev_run_number: ${{ steps.validate.outputs.run_number }}
+      dev_head_sha: ${{ steps.validate.outputs.head_sha }}
+    steps:
+      - name: Verify successful Dev run
+        id: validate
+        uses: actions/github-script@v7
+        env:
+          DEV_RUN_ID: ${{ inputs.dev_run_id }}
+        with:
+          script: |
+            if (context.ref !== "refs/heads/main") {
+              core.setFailed("Run this QA workflow from the main branch.");
+              return;
+            }
+
+            if (!/^\d+$/.test(process.env.DEV_RUN_ID)) {
+              core.setFailed("The Dev run ID must be numeric.");
+              return;
+            }
+
+            const { owner, repo } = context.repo;
+            const runId = Number(process.env.DEV_RUN_ID);
+            const { data: run } = await github.rest.actions.getWorkflowRun({
+              owner,
+              repo,
+              run_id: runId,
+            });
+            const { data: workflow } = await github.rest.actions.getWorkflow({
+              owner,
+              repo,
+              workflow_id: run.workflow_id,
+            });
+
+            if (workflow.path !== ".github/workflows/build-dev.yml") {
+              core.setFailed("The selected run is not the Dev workflow.");
+              return;
+            }
+            if (run.status !== "completed" || run.conclusion !== "success") {
+              core.setFailed("The selected Dev workflow run has not completed successfully.");
+              return;
+            }
+            if (run.event !== "push" || run.head_branch !== "main") {
+              core.setFailed("Only successful Dev runs triggered by a push to main can be promoted.");
+              return;
+            }
+
+            core.setOutput("run_number", run.run_number);
+            core.setOutput("head_sha", run.head_sha);
+
+  terraform:
+    needs: validate-dev-run
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      ARM_USE_OIDC: "true"
+      ARM_CLIENT_ID: ${{ secrets.GH_ACTIONS_AZURE_CLIENT_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.QA_AZURE_SUBSCRIPTION_ID }}
+      CONTAINER_REGISTRY_USERNAME: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
+      CONTAINER_REGISTRY_PASSWORD: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
+      TF_VAR_container_registry_username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
+      TF_VAR_container_registry_password: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
+      TF_VAR_container_image: "crnono.azurecr.io/wasatch-custom-basements/frontend-site:1.0.${{ needs.validate-dev-run.outputs.dev_run_number }}"
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ needs.validate-dev-run.outputs.dev_head_sha }}
 
       - uses: azure/login@v2
         with:
@@ -67,10 +125,5 @@ jobs:
       - name: Terraform validate
         run: terraform validate
 
-      - name: Terraform plan
-        if: github.event.workflow_run.event == 'pull_request'
-        run: terraform plan -input=false
-
       - name: Terraform apply
-        if: github.event.workflow_run.event == 'push' && github.event.workflow_run.head_branch == 'main'
         run: terraform apply -input=false -auto-approve

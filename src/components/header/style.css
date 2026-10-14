@@ -19,7 +19,7 @@
 }
 
 .header:before {
-	border-color: #B78D65 transparent;
+	border-color: #C49A52 transparent;
 	border-style: solid;
 	border-width: 0 60px 100px;
 	content: "";
@@ -91,8 +91,8 @@
 	display: block;
 	padding: 38px 0;
 	position: relative;
-	background: -webkit-linear-gradient(left, #B78D65, #B78D65 50%, #000 50%);
-	background: linear-gradient(to right, #B78D65, #B78D65 50%, #000 50%);
+	background: -webkit-linear-gradient(left, #C49A52, #C49A52 50%, #000 50%);
+	background: linear-gradient(to right, #C49A52, #C49A52 50%, #000 50%);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -103,7 +103,7 @@
 .mainmenu ul>li.active a:before {
 	position: absolute;
 	content: '';
-	background: #B78D65;
+	background: #C49A52;
 	left: 50%;
 	bottom: 25px;
 	width: 25px;
@@ -115,12 +115,12 @@
 
 .mainmenu ul li a:hover {
 	background-position: 0 100%;
-	border-color: #B78D65;
+	border-color: #C49A52;
 }
 
 .mainmenu ul>li.active>a {
 	background-position: 0 100%;
-	border-color: #B78D65;
+	border-color: #C49A52;
 }
 
 .mainmenu ul li ul {
@@ -166,7 +166,7 @@
 	font-weight: 500;
 	margin-left: 35px;
 	position: relative;
-	color: #B78D65
+	color: #C49A52
 }
 
 .header-btn>div {
@@ -177,9 +177,9 @@
 	transform: translateY(-50%);
 	width: 40px;
 	height: 40px;
-	background: #B78D65;
+	background: #C49A52;
 	text-align: center;
-	color: #B78D65;
+	color: #C49A52;
 	border-radius: 5px;
 	line-height: 40px;
 	z-index: 1;
@@ -203,7 +203,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	border: 4px solid #B78D65;
+	border: 4px solid #C49A52;
 	z-index: -1;
 	border-radius: 5px;
 }

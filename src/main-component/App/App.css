@@ -58,7 +58,7 @@ button {
 }
 
 a:hover {
-	color: #B78D65;
+	color: #C49A52;
 }
 
 button {
@@ -130,19 +130,19 @@ select {
 
 
 *::-moz-selection {
-	background: #c6a280;
+	background: #C49A52;
 	color: #fff;
 	text-shadow: none;
 }
 
 ::-moz-selection {
-	background: #c6a280;
+	background: #C49A52;
 	color: #fff;
 	text-shadow: none;
 }
 
 ::selection {
-	background: #c6a280;
+	background: #C49A52;
 	color: #fff;
 	text-shadow: none;
 }
@@ -191,15 +191,15 @@ section {
 }
 
 .btn-fill {
-	background: #B78D65 none repeat scroll 0 0;
+	background: #C49A52 none repeat scroll 0 0;
 	color: #fff;
 	padding: 17px 35px;
-	border-color: #B78D65
+	border-color: #C49A52
 }
 
 .btn-fill:hover {
 	background: transparent;
-	color: #B78D65
+	color: #C49A52
 }
 
 .btn-border {
@@ -212,7 +212,7 @@ section {
 }
 
 .sub-title {
-	color: #B78D65;
+	color: #C49A52;
 	letter-spacing: 5px;
 	font-weight: 500;
 	margin-bottom: 10px;
@@ -229,8 +229,8 @@ section {
 
 .form-button {
 	display: inline-block;
-	background: #B78D65;
-	border: 1px solid #B78D65;
+	background: #C49A52;
+	border: 1px solid #C49A52;
 	padding: 17px 35px;
 	color: #fff;
 	-webkit-transition: all 0.4s ease;
@@ -239,7 +239,7 @@ section {
 
 .form-button:hover {
 	background: transparent;
-    color: #B78D65
+    color: #C49A52
 }
 /*Responsive*/
 @media(max-width: 767px) {

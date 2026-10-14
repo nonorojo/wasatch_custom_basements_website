@@ -33,9 +33,9 @@ const Header = () => {
                     <li>
                       <Link to="/">Home</Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to="/about">About</Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link to="/" onClick={onClick}>
                         Projects
@@ -49,7 +49,7 @@ const Header = () => {
                         </li>
                       </ul>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to="/" onClick={onClick}>
                         Service
                       </Link>
@@ -96,7 +96,7 @@ const Header = () => {
                           <Link to="/blog-single">Blog Details</Link>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li>
                       <Link to="/contact">Contact</Link>
                     </li>
