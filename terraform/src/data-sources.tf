@@ -9,5 +9,5 @@ data "azurerm_container_app_environment" "container_app" {
 
 data "azurerm_container_registry" "container_registry" {
   name                = "crnono"
-  resource_group_name = "rg-cae-nonorojo-${var.environment}"
+  resource_group_name = "rg-crnono"
 }
