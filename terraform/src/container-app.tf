@@ -1,6 +1,6 @@
 resource "azurerm_container_app" "website" {
   name                         = "ca-${var.project_name}-${var.environment}"
-  resource_group_name          = data.azurerm_resource_group.container_app.name
+  resource_group_name          = azurerm_resource_group.wasatch.name
   container_app_environment_id = data.azurerm_container_app_environment.container_app.id
   revision_mode                = "Single"
 
