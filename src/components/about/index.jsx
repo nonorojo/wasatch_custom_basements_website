@@ -15,18 +15,20 @@ const About = () => {
         <div className="row align-items-center">
           <div className="col-lg-5 col-md-6">
             <div className="about-left" data-aos="fade-right">
-              <div className="site-heading">
-                <h3 className="sub-title">ABOUT US</h3>
-                <h2 className="section-title">
-                  Affordable and high-quality craftsmanship
-                </h2>
+              <div className="about-panel">
+                <div className="site-heading">
+                  <h3 className="sub-title">ABOUT US</h3>
+                  <h2 className="section-title">
+                    Affordable and high-quality craftsmanship
+                  </h2>
+                </div>
+                <p>
+                  Two Hispanic brothers started Wasatch Custom Basements with one goal in mind: to build a better life for their families while helping others love their homes again. What began as a small dream has grown into a trusted remodeling team serving Salt Lake City with pride, integrity, and hard work.
+                </p>
+                <p>
+                  We specialize in transforming basements and living spaces to match your vision—beautiful, functional, and built to last. Our mission is simple: deliver high‑quality craftsmanship at an affordable price, so every family can enjoy a home they’re proud of.
+                </p>
               </div>
-              <p>
-              Two Hispanic brothers started Wasatch Custom Basements with one goal in mind: to build a better life for their families while helping others love their homes again. What began as a small dream has grown into a trusted remodeling team serving Salt Lake City with pride, integrity, and hard work.
-              </p>
-              <p>
-              We specialize in transforming basements and living spaces to match your vision—beautiful, functional, and built to last. Our mission is simple: deliver high‑quality craftsmanship at an affordable price, so every family can enjoy a home they’re proud of.
-              </p>
               <div className="about-signature">
                 <div className="signature-left">
                   <img src={signature} alt="signature" />
