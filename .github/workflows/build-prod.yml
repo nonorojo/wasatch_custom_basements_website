@@ -28,6 +28,7 @@ env:
   TF_VAR_workload_profile_type: "Consumption"
   TF_VAR_container_app_cpu: ${{ vars.PROD_CONTAINER_APP_CPU || '0.25' }}
   TF_VAR_container_app_memory: ${{ vars.PROD_CONTAINER_APP_MEMORY || '0.5Gi' }}
+  TF_VAR_container_image: "crnono.azurecr.io/wasatch-custom-basements/frontend-site:1.0.${{ github.run_number }}"
 
 defaults:
   run:

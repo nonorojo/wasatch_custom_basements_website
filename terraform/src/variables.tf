@@ -25,7 +25,7 @@ variable "subscription_ids" {
 variable "container_image" {
   description = "Container image used by the website Container App"
   type        = string
-  default     = "mcr.microsoft.com/azuredocs/containerapps-helloworld:latest"
+  default     = "crnono.azurecr.io/wasatch-custom-basements/frontend-site:latest"
 }
 
 variable "container_app_cpu" {
