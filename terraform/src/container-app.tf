@@ -1,9 +1,9 @@
 data "azurerm_resource_group" "container_app" {
-  name = "rg-${var.project_name}-${var.environment}"
+  name = "rg-nonoroj-${var.environment}"
 }
 
 data "azurerm_container_app_environment" "container_app" {
-  name                = "cae-${var.project_name}-${var.environment}"
+  name                = "cae-nonrojo-${var.environment}"
   resource_group_name = data.azurerm_resource_group.container_app.name
 }
 
