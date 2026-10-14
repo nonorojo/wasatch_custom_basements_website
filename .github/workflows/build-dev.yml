@@ -37,6 +37,8 @@ env:
   CONTAINER_IMAGE: "crnono.azurecr.io/wasatch-custom-basements/frontend-site"
   CONTAINER_REGISTRY_USERNAME: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
   CONTAINER_REGISTRY_PASSWORD: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
+  TF_VAR_container_registry_username: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
+  TF_VAR_container_registry_password: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
   TFSTATE_RESOURCE_GROUP: rg-tfstate-dev
   TFSTATE_STORAGE_ACCOUNT: stdevnonorojotfstate
   TFSTATE_CONTAINER: tfstate

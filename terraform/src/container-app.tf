@@ -1,17 +1,19 @@
-data "azurerm_resource_group" "container_app" {
-  name = "rg-cae-nonorojo-${var.environment}"
-}
-
-data "azurerm_container_app_environment" "container_app" {
-  name                = "cae-nonorojo-${var.environment}"
-  resource_group_name = data.azurerm_resource_group.container_app.name
-}
-
 resource "azurerm_container_app" "website" {
   name                         = "ca-${var.project_name}-${var.environment}"
   resource_group_name          = data.azurerm_resource_group.container_app.name
   container_app_environment_id = data.azurerm_container_app_environment.container_app.id
   revision_mode                = "Single"
+
+  secret {
+    name  = "container-registry-password"
+    value = data.azurerm_container_registry.container_registry.admin_password
+  }
+
+  registry {
+    server               = "crnono.azurecr.io"
+    username             = data.azurerm_container_registry.container_registry.admin_username
+    password_secret_name = "container-registry-password"
+  }
 
   template {
     min_replicas = 1
