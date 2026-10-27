@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import serviceImg1 from "../../img/service-bg-1.png";
+import serviceImg1 from "../../img/service-bg-1.jpg";
 import serviceImg2 from "../../img/service-bg-2.jpg";
 import serviceImg3 from "../../img/service-bg-3.jpg";
 import serviceIcon1 from "../../img/service-icon-1.png";
@@ -25,13 +25,14 @@ const ServiceSection = () => {
                 <img src={serviceIcon1} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Interior Design</h3>
+                <h3>Shelving</h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
+                  Custom shelving built with precise craftsmanship, durable
+                  materials, and thoughtful design for a more organized,
+                  beautiful home.
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
+                <Link to="/contact" className="cta-btn btn-border">
+                  Contact
                 </Link>
               </div>
               <img src={serviceImg1} alt="img" />
@@ -47,13 +48,12 @@ const ServiceSection = () => {
                 <img src={serviceIcon2} alt="img" />
               </div>
               <div className="service-text">
-                <h3>Architecture</h3>
+                <h3>Interior Remodeling</h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
+                  Transform your living spaces with our expert interior remodeling services, combining functionality, style, and attention to detail for a home you'll love.
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
+                <Link to="/projects" className="cta-btn btn-border">
+                  Gallery
                 </Link>
               </div>
               <img src={serviceImg2} alt="img" />
@@ -69,10 +69,9 @@ const ServiceSection = () => {
                 <img src={serviceIcon3} alt="img" />
               </div>
               <div className="service-text">
-                <h3>House Planning</h3>
+                <h3>Exterior Remodeling</h3>
                 <p>
-                  We develop the full cycle of project documentation &amp; full
-                  details. Our clients satisfaction is most
+                  Enhance your home's exterior with our professional remodeling services, focusing on curb appeal, durability, and modern design to create a welcoming and stylish exterior.
                 </p>
                 <Link to="/service-single" className="cta-btn btn-border">
                   Read More
