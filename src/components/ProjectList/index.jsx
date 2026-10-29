@@ -10,7 +10,7 @@ import projectImg6 from "../../img/project-6.jpg";
 import projectImg7 from "../../img/project-7.jpg";
 import projectImg8 from "../../img/project-8.jpg";
 import projectImg9 from "../../img/project-9.jpg";
-import projectImg10 from "../../img/project-13.jpg";
+// import projectImg10 from "../../img/project-13.jpg";
 
 import "./style.css";
 
