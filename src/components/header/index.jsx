@@ -37,6 +37,9 @@ const Header = () => {
                       <Link to="/about">About</Link>
                     </li> */}
                     <li>
+                      <Link to="/projects">Projects</Link>
+                    </li>
+                    {/* <li>
                       <Link to="/" onClick={onClick}>
                         Projects
                       </Link>
@@ -48,7 +51,7 @@ const Header = () => {
                           <Link to="/projects-single">Project Details</Link>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     {/* <li>
                       <Link to="/" onClick={onClick}>
                         Service

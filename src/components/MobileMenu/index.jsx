@@ -18,24 +18,28 @@ const menus = [
     link: "/about",
   },
   */
-
   {
     id: 3,
-    title: "Project",
+    title: "Projects",
     link: "/projects",
-    submenu: [
-      {
-        id: 31,
-        title: "Project",
-        link: "/projects",
-      },
-      {
-        id: 32,
-        title: "Project Details",
-        link: "/projects-single",
-      },
-    ],
   },
+  // {
+  //   id: 3,
+  //   title: "Project",
+  //   link: "/projects",
+  //   submenu: [
+  //     {
+  //       id: 31,
+  //       title: "Project",
+  //       link: "/projects",
+  //     },
+  //     {
+  //       id: 32,
+  //       title: "Project Details",
+  //       link: "/projects-single",
+  //     },
+  //   ],
+  // },
   /*
   {
     id: 4,
