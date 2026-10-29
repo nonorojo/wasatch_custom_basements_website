@@ -17,8 +17,8 @@ const Footer = () => {
               <div className="single-footer">
                 <h3>About</h3>
                 <p>
-                  Precious ipsum dolor sit amet consectetur
-                  <br /> adipisicing elit, sed dos mod tempor
+                  Two brothers specializing in custom basements, interior and exterior remodeling and renovation
+                  <br /> in Salt Lake City, Utah.
                 </p>
                 <ul className="footer-contact">
                   <li>
@@ -28,14 +28,14 @@ const Footer = () => {
                     <i className="fas fa-envelope" /> support@company.com
                   </li>
                   <li>
-                    <i className="fas fa-map" /> 74 South Doult Street, Dubai.
+                    <i className="fas fa-map" /> Salt Lake City, Utah.
                   </li>
                 </ul>
               </div>
             </div>
             <div className="col-lg-2 col-sm-6 order-lg-2 order-3">
               <div className="single-footer">
-                <h3>Qucik Links</h3>
+                <h3>Quick Links</h3>
                 <ul>
                   <li>
                     <Link to="/">About Us</Link>
@@ -43,19 +43,19 @@ const Footer = () => {
                   <li>
                     <Link to="/">Our Projects</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/">Our Services</Link>
                   </li>
                   <li>
                     <Link to="/">Meet The Team</Link>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/">Contact</Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="col-lg-2 col-sm-6 order-lg-3 order-4">
+            {/* <div className="col-lg-2 col-sm-6 order-lg-3 order-4">
               <div className="single-footer">
                 <h3>Exlore</h3>
                 <ul>
@@ -76,11 +76,11 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
             <div className="col-lg-4 col-sm-6 order-lg-4 order-2">
               <div className="single-footer">
-                <h3>Newsletter</h3>
-                <p>Sign up now for weekly news & updates.</p>
+                <h3>Wasatch Custom Basements</h3>
+                {/* <p>Sign up now for weekly news & updates.</p>
                 <div className="newsletter_form">
                   <form onSubmit={NewsletterHandler}>
                     <input type="email" placeholder="Email Address" />
@@ -88,7 +88,7 @@ const Footer = () => {
                       <i className="fas fa-long-arrow-alt-right" />
                     </button>
                   </form>
-                </div>
+                </div> */}
                 <ul className="footer-social">
                   <li>
                     <Link to="/">
@@ -123,7 +123,7 @@ const Footer = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <p>&copy; Copyright 2021 by Themescare</p>
+              <p>&copy; Copyright {new Date().getFullYear()} by nonorojo</p>
             </div>
           </div>
         </div>

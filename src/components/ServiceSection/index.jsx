@@ -73,8 +73,8 @@ const ServiceSection = () => {
                 <p>
                   Enhance your home's exterior with our professional remodeling services, focusing on curb appeal, durability, and modern design to create a welcoming and stylish exterior.
                 </p>
-                <Link to="/service-single" className="cta-btn btn-border">
-                  Read More
+                <Link to="/contact" className="cta-btn btn-border">
+                  Contact
                 </Link>
               </div>
               <img src={serviceImg3} alt="img" />
